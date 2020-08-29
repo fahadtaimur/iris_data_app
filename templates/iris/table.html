@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}DataTable{% endblock %}
+
+{% block content %}
+
+    <br>
+
+<div class="alert alert-dark" role="alert" style="text-align: center;">
+  Iris Dataset
+</div>
+
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action active">
+        SUMMARY STATISTICS - MEAN
+      </button>
+      <button type="button" class="list-group-item list-group-item-action">Sepal Length: {{ df.sepal_length.mean|floatformat:1 }}</button>
+      <button type="button" class="list-group-item list-group-item-action">Sepal Width: {{ df.sepal_width.mean|floatformat:1 }}</button>
+      <button type="button" class="list-group-item list-group-item-action">Petal Length: {{ df.petal_length.mean|floatformat:1 }}</button>
+      <button type="button" class="list-group-item list-group-item-action">Petal Width: {{ df.petal_width.mean|floatformat:1 }}</button>
+
+</div>
+
+    <br>
+
+<table class="table">
+
+  <thead class="thead-dark">
+    <tr>
+    {% for colnames in df %}
+      <th scope="col">{{ colnames }}</th>
+    {% endfor %}
+    </tr>
+  </thead>
+
+  <tbody>
+
+  <!-- iterate through all the data frame rows -->
+  {% for _,value in df.iterrows %}
+    <tr>
+        <!-- fill each table cell with value -->
+        {% for v in value %}
+        <td scope="row">{{ v }}</td>
+        {% endfor %}
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

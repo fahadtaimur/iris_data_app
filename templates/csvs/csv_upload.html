@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Data Upload{% endblock %}
+
+{% block content %}
+
+    <br>
+    <br>
+
+    {% if success %}
+    <div class="alert alert-success" role="alert">
+      {{ success }}
+    </div>
+    {% elif failure %}
+    <div class="alert alert-danger" role="alert">
+      {{ failure }}
+    </div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Upload File</label>
+        {{ form.filename }}
+      </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+{% endblock %}
