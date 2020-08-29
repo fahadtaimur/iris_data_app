@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Histogram{% endblock %}
+
+{% block content %}
+
+    <br><br>
+
+    {% if graph1 %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Sepal Length
+      </div>
+          <div style="width:600;height:500">
+            {{ graph1 | safe }}
+        </div>
+      <div class="card-footer text-white">
+
+      </div>
+    </div>
+    {% endif %}
+
+    <br>
+   {% if graph2 %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Sepal Width
+      </div>
+          <div style="width:600;height:500">
+            {{ graph2 | safe }}
+        </div>
+      <div class="card-footer text-white">
+        There is a strong positive correlation between Petal Length and Petal Width
+      </div>
+    </div>
+    {% endif %}
+
+        <br>
+   {% if graph3 %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Petal Length
+      </div>
+          <div style="width:600;height:500">
+            {{ graph3 | safe }}
+        </div>
+      <div class="card-footer text-white">
+        There is a strong positive correlation between Petal Length and Petal Width
+      </div>
+    </div>
+    {% endif %}
+
+        <br>
+   {% if graph4 %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Petal Width
+      </div>
+          <div style="width:600;height:500">
+            {{ graph4 | safe }}
+        </div>
+      <div class="card-footer text-white">
+        There is a strong positive correlation between Petal Length and Petal Width
+      </div>
+    </div>
+    {% endif %}
+
+
+
+{% endblock %}

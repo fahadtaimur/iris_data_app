@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Scatterplot{% endblock %}
+
+{% block content %}
+
+    <br><br>
+
+    <div class="alert alert-primary" role="alert" style="text-align: center;">
+        The correlation between Petal Width and Petal Length: <strong> {{ corr|floatformat:2 }}</strong>
+    </div>
+
+    <br>
+
+    {% if graph %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Scatterplot
+      </div>
+          <div style="width:600;height:500">
+            {{ graph | safe }}
+        </div>
+      <div class="card-footer text-white">
+        There is a strong positive correlation between Petal Length and Petal Width
+      </div>
+    </div>
+
+
+    {% endif %}
+
+
+
+{% endblock %}

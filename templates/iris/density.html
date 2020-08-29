@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Histogram{% endblock %}
+
+{% block content %}
+
+    <br><br>
+
+    {% if graph1 %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Sepal Length | Sepal Width
+      </div>
+          <div style="width:600;height:500">
+            {{ graph1 | safe }}
+        </div>
+      <div class="card-footer text-white">
+
+      </div>
+    </div>
+    {% endif %}
+
+    <br>
+   {% if graph2 %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Petal Length | Petal Width
+      </div>
+          <div style="width:600;height:500">
+            {{ graph2 | safe }}
+        </div>
+      <div class="card-footer text-white">
+
+      </div>
+    </div>
+    {% endif %}
+
+        <br>
+{% endblock %}

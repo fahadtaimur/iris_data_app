@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}ScatterPlot - 3D{% endblock %}
+
+{% block content %}
+
+    <br><br>
+
+    {% if graph %}
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">
+        Scatterplot
+      </div>
+          <div style="width:600;height:500">
+            {{ graph | safe }}
+        </div>
+      <div class="card-footer text-white">
+        3D Scatterplot shows three distinct clusters in Iris Plants visually
+      </div>
+    </div>
+
+
+    {% endif %}
+
+
+{% endblock %}

@@ -5,13 +5,14 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <meta charset="UTF-8">
+
     <title>{% block title %}Base{% endblock %}</title>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="mx-auto d-sm-flex d-block flex-sm-nowrap" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'csvs:csv' %}">Upload Data <span class="sr-only">(current)</span></a>
@@ -21,14 +22,14 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Analytics
+          Plots
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Scatterplot3D</a>
-          <a class="dropdown-item" href="#">Scatterplot</a>
-          <a class="dropdown-item" href="#">Histograms</a>
-          <a class="dropdown-item" href="#">Boxplots</a>
-          <a class="dropdown-item" href="#">Density Contour</a>
+          <a class="dropdown-item" href="{% url 'iris:scatter3d' %}">Scatterplot3D</a>
+          <a class="dropdown-item" href="{% url 'iris:scatter' %}">Scatterplot</a>
+          <a class="dropdown-item" href="{% url 'iris:histogram' %}">Histograms</a>
+          <a class="dropdown-item" href="{% url 'iris:boxplot' %}">Boxplots</a>
+          <a class="dropdown-item" href="{% url 'iris:density' %}">Density Contour</a>
         </div>
       </li>
 
@@ -39,6 +40,7 @@
 
   </div>
 </nav>
+
 
 <div class="container">
     {% block content %}
